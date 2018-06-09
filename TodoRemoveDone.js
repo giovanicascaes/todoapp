@@ -18,7 +18,6 @@ export default () =>
 const styles = StyleSheet.create({
     text: {
         padding: 15,
-        backgroundColor: '#d84942',
         color: '#ab1500',
         fontWeight: 'bold',
         textAlign: 'center',

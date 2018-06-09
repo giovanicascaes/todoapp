@@ -3,11 +3,11 @@
  */
 
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleSheet, Text} from 'react-native'
 
 export default () =>
     <Text style={styles.text}>
-        TODO to Do
+        Todo to Do
     </Text>;
 
 const styles = StyleSheet.create({
