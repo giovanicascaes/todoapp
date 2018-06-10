@@ -5,13 +5,10 @@
 import React from 'react';
 import {StyleSheet, TextInput} from 'react-native'
 
-export default ({addTodo}) => {
-    let input;
-
-    return <TextInput ref={node => {
-                          input = node;
-                      }}
-                      onSubmitEditing={() => addTodo(input)}
+export default ({text, updateInputText, addTodo}) => {
+    return <TextInput value={text}
+                      onChangeText={(text) => updateInputText(text)}
+                      onSubmitEditing={() => addTodo(text)}
                       placeholder={'Add todo'}
                       style={styles.input}/>;
 }

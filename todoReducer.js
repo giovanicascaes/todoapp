@@ -2,26 +2,33 @@
  * @flow
  */
 
-import {actionTypes} from './actionCreators'
+import {actionTypes} from './todoActionCreators'
 
-export const reducer = (currentState = {}, {type, payload}) => {
-    const {todos} = currentState;
+const initialState = {
+    text: '',
+    todos: []
+};
+
+export const reducer = (state = initialState, {type, payload}) => {
+    const {todos} = state;
 
     switch (type) {
-        case actionTypes.ADD: {
+        case actionTypes.UPDATE_TEXT:
             return {
-                ...currentState,
+                ...state,
+                text: payload
+            };
+        case actionTypes.ADD:
+            return {
+                text: '',
                 todos: [payload, ...todos]
-            }
-        }
-        case actionTypes.REMOVE: {
+            };
+        case actionTypes.REMOVE:
             return {
-                ...currentState,
+                ...state,
                 todos: todos.filter((todo, index) => index !== payload)
-            }
-        }
-        default: {
-            return currentState;
-        }
+            };
+        default:
+            return state;
     }
 }

@@ -1,14 +1,22 @@
+/**
+ * @flow
+ */
+
 import {connect} from "react-redux";
 import Input from "./Input";
-import {add} from "./actionCreators";
+import {updateText, add} from "./todoActionCreators";
+
+const mapStateToProps = ({text}) => ({text});
 
 const mapDispatchToProps = dispatch => ({
-    addTodo: input => {
-        if (!input._lastNativeText.trim()) {
-            dispatch(add(input._lastNativeText));
-            input._lastNativeText = '';
+    updateInputText: text => {
+        dispatch(updateText(text));
+    },
+    addTodo: text => {
+        if (text.trim()) {
+            dispatch(add(text));
         }
     }
 });
 
-export default connect(null, mapDispatchToProps)(Input);
+export default connect(mapStateToProps, mapDispatchToProps)(Input);
