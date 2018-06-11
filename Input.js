@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import {StyleSheet, TextInput} from 'react-native'
+import {StyleSheet, TextInput} from 'react-native';
 
 export default ({text, updateInputText, addTodo}) => {
     return <TextInput value={text}

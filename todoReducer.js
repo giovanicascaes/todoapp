@@ -2,7 +2,7 @@
  * @flow
  */
 
-import {actionTypes} from './todoActionCreators'
+import {actionTypes} from './todoActionCreators';
 
 const initialState = {
     text: '',
@@ -21,12 +21,17 @@ export const reducer = (state = initialState, {type, payload}) => {
         case actionTypes.ADD:
             return {
                 text: '',
-                todos: [payload, ...todos]
+                todos: [{text: payload, checked: false}, ...todos]
             };
         case actionTypes.REMOVE:
             return {
                 ...state,
                 todos: todos.filter((todo, index) => index !== payload)
+            };
+        case actionTypes.TOGGLE:
+            return {
+                ...state,
+                todos: todos.map((todo, index) => index === payload ? {...todo, checked: !todo.checked} : todo)
             };
         default:
             return state;

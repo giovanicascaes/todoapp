@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import {StyleSheet, Text} from 'react-native'
+import {StyleSheet, Text} from 'react-native';
 
 export default () =>
     <Text style={styles.text}>
@@ -13,7 +13,7 @@ export default () =>
 const styles = StyleSheet.create({
     text: {
         padding: 15,
-        backgroundColor: 'grey',
+        backgroundColor: '#9A9A9A',
         fontWeight: 'bold',
         textAlign: 'center'
     }

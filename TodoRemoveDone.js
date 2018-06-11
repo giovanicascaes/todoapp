@@ -6,8 +6,8 @@ import React from 'react';
 import {StyleSheet, Text, TouchableHighlight, View} from 'react-native'
 
 export default () =>
-    <TouchableHighlight underlayColor={'white'}
-                        onPress={() => null}>
+    <TouchableHighlight onPress={() => null}
+                        underlayColor={'white'}>
         <View>
             <Text style={styles.text}>
                 Remove Completed Items

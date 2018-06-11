@@ -2,9 +2,9 @@
  * @flow
  */
 
-import {connect} from "react-redux";
-import Input from "./Input";
-import {updateText, add} from "./todoActionCreators";
+import {connect} from 'react-redux';
+import Input from './Input';
+import {updateText, add} from './todoActionCreators';
 
 const mapStateToProps = ({text}) => ({text});
 
