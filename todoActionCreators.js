@@ -6,6 +6,7 @@ export const actionTypes = {
     UPDATE_TEXT: 'UPDATE_TEXT',
     ADD: 'ADD',
     REMOVE: 'REMOVE',
+    REMOVE_DONE: 'REMOVE_DONE',
     TOGGLE: 'TOGGLE'
 };
 
@@ -22,6 +23,10 @@ export const add = text => ({
 export const remove = todoIndex => ({
     type: actionTypes.REMOVE,
     payload: todoIndex
+});
+
+export const removeDone = () => ({
+    type: actionTypes.REMOVE_DONE
 });
 
 export const toggle = todoIndex => ({

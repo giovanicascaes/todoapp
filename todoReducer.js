@@ -21,17 +21,22 @@ export const reducer = (state = initialState, {type, payload}) => {
         case actionTypes.ADD:
             return {
                 text: '',
-                todos: [{text: payload, checked: false}, ...todos]
+                todos: [{text: payload, done: false}, ...todos]
             };
         case actionTypes.REMOVE:
             return {
                 ...state,
                 todos: todos.filter((todo, index) => index !== payload)
             };
+        case actionTypes.REMOVE_DONE:
+            return {
+                ...state,
+                todos: todos.filter(todo => !todo.done)
+            };
         case actionTypes.TOGGLE:
             return {
                 ...state,
-                todos: todos.map((todo, index) => index === payload ? {...todo, checked: !todo.checked} : todo)
+                todos: todos.map((todo, index) => index === payload ? {...todo, done: !todo.done} : todo)
             };
         default:
             return state;

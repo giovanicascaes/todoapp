@@ -5,15 +5,15 @@
 import React from 'react';
 import {ScrollView, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
-import TodoToggle from './TodoToggle';
+import ActionTodo from './ActionTodo';
 
 const TodoList = ({todos}) =>
     <ScrollView style={styles.todoList}>
         {todos.map((todo, index) =>
-            <TodoToggle key={index}
+            <ActionTodo key={index}
                         index={index}>
                 {todo}
-            </TodoToggle>)}
+            </ActionTodo>)}
     </ScrollView>;
 
 const styles = StyleSheet.create({

@@ -5,8 +5,8 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableHighlight, View} from 'react-native'
 
-export default () =>
-    <TouchableHighlight onPress={() => null}
+export default ({onClick}) =>
+    <TouchableHighlight onPress={onClick}
                         underlayColor={'white'}>
         <View>
             <Text style={styles.text}>
